@@ -14,6 +14,14 @@ export function circular(): string {
   return `border-radius: 50%;`;
 }
 
+export function textEllipsis(): string {
+  return `
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  `;
+}
+
 export function flexContainer({
   flexDirection = 'row',
   alignItems = 'flex-start',

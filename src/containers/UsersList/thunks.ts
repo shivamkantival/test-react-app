@@ -2,10 +2,8 @@
 import { Dispatch } from 'react';
 import { ACTION_TYPES, User, UsersStore } from './interfaces';
 import { Action } from 'config/interfaces';
-
 //constants
 import { FETCH_USERS_API_PATH } from './constants';
-
 //utils
 import { createAction, get } from 'utils';
 import map from 'lodash/map';

@@ -4,14 +4,16 @@ import React from 'react';
 import Header from 'components/Header';
 import StyledAppContainer from './styles';
 import AppContent from 'components/AppContent';
+import PlatformPusherNotifications from 'containers/PlatformPusherNotifications';
 
 function App() {
   return (
-    <StyledAppContainer>
-      <Header className="header" />
-      <AppContent className="appContent" />
-    </StyledAppContainer>
+    <PlatformPusherNotifications>
+      <StyledAppContainer>
+        <Header className="header" />
+        <AppContent className="appContent" />
+      </StyledAppContainer>
+    </PlatformPusherNotifications>
   );
 }
-
 export default App;

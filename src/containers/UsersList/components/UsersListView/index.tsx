@@ -30,7 +30,7 @@ const UsersListView = forwardRef<HTMLDivElement, UsersListViewProps>((props, ref
       className={isLoadingForFirstTime ? 'fullPageLoad' : ''}
     >
       {isLoadingForFirstTime ? (
-        <Loader dimension={40} className="loader" />
+        <Loader dimension={25} className="loader" />
       ) : (
         <>
           {map<User, ReactElement>(users, user => (
