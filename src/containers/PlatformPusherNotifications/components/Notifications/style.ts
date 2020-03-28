@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { spacing } from 'styles/theme';
 import { flexContainer } from 'styles/mixins';
+import { TransitionGroup } from 'react-transition-group';
 
 const CARD_HEIGHT = spacing(10);
 
-export default styled.div`
-  .notificationListContainer {
-    ${flexContainer({ flexDirection: 'column', alignItems: 'flex-end' })}
-  }
+export default styled<typeof TransitionGroup>(TransitionGroup)`
   .animation-enter-done {
     height: ${CARD_HEIGHT};
   }
@@ -71,4 +69,5 @@ export default styled.div`
   position: fixed;
   bottom: ${spacing(10)};
   right: ${spacing(5)};
+  ${flexContainer({ flexDirection: 'column', alignItems: 'flex-end' })};
 `;

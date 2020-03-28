@@ -34,6 +34,18 @@ function hasContainerUpdated({
   return loadedData || hasScrollRatioChanged;
 }
 
+/**
+ * Return true only if-
+ * 1. data was just loaded and the scroll container still has hasn't reached threshold
+ * 2. scrollRatio changed and is greater than threshold
+ *
+ * @param isScrollable
+ * @param hasError
+ * @param loadedData
+ * @param threshold
+ * @param currentScrollRatio
+ * @param hasScrollRatioChanged
+ */
 export function shouldLoadMoreData({
   isScrollable,
   hasError,

@@ -3,6 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Steps to run local](https://github.com/shivamkantival/test-react-app#steps-to-run-local)
 - [Highlights](https://github.com/shivamkantival/test-react-app#highlights)
 - [Performance report](https://github.com/shivamkantival/test-react-app#performance-report)
+- [Things to note](https://github.com/shivamkantival/test-react-app#things-to-note)
 - [Stack used](https://github.com/shivamkantival/test-react-app#stack-used)
 
 # Steps to run local
@@ -21,6 +22,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Performance report
 Upload [profiler report](https://github.com/shivamkantival/test-react-app/blob/master/profiling-data.29-03-2020.01-25-03.json) to React Profiler and the results for inital page load of the application. It can be seen that the number of updates are minimal. Also, for every update only the components with changed data re-render.
+
+# Things to note
+- Delay of 3 seconds has been added to API-fetch to introduce the desired load time
+- This is my first TypeScript project, might not have followed all the best practices ¯\\_(ツ)_/¯
 
 # Stack used
 ```
