@@ -1,3 +1,4 @@
 export interface LoaderProps {
-  dimension?: number;
+  readonly dimension: number;
+  readonly className?: string;
 }

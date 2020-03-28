@@ -1,12 +1,19 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 
 //components
-import StyledHeader from "./styles"
+import StyledHeader from './styles';
 
-interface HeaderProps {}
+//constants
+import { EMPTY_OBJECT_READONLY } from 'config/constants';
 
-const Header: React.FC<HeaderProps> = () => {
-  return <StyledHeader><h4>Users</h4></StyledHeader>
-};
+interface HeaderProps {
+  className?: string;
+}
 
-export default memo(Header);
+const Header: React.FC<HeaderProps> = (props = EMPTY_OBJECT_READONLY) => (
+  <StyledHeader className={props.className}>
+    <h3>Users</h3>
+  </StyledHeader>
+);
+
+export default memo<HeaderProps>(Header);

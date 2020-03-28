@@ -1,6 +1,6 @@
 //styles
 import { circular, centerToParent } from 'styles/mixins';
-import { COLORS } from 'styles/theme';
+import { COLORS, spacing } from 'styles/theme';
 
 import styled from 'styled-components';
 import { LoaderProps } from './interfaces';
@@ -20,8 +20,8 @@ const ANIMATION_NAME = 'slowExpand',
   LOADER_COLOR: string = COLORS.PARROT_GREEN;
 
 export default styled.div`
-  width: ${(props: LoaderProps) => `${props.dimension}px`};
-  height: ${(props: LoaderProps) => `${props.dimension}px`};
+  width: ${(props: LoaderProps) => `${spacing(props.dimension)}`};
+  height: ${(props: LoaderProps) => `${spacing(props.dimension)}`};
   position: relative;
 
   @keyframes ${ANIMATION_NAME} {

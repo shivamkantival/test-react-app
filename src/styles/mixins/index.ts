@@ -32,3 +32,18 @@ export function flexContainer({
 export function centerContent() {
   return `${flexContainer({ alignItems: 'center', justifyContent: 'center' })}`;
 }
+
+export const setStylesForAllChildrenButLast = function (
+  propsForAll: string,
+  propsForLast: string
+): string {
+  return `
+    & > * {
+      ${propsForAll}
+      
+      &:last-child {
+        ${propsForLast}
+      }
+    }
+  `;
+};

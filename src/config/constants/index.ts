@@ -1,5 +1,3 @@
-export * from './actionTypes';
-
-export const STATE_KEYS = {
-  USERS: 'users',
-};
+export const EMPTY_OBJECT_READONLY = Object.freeze({});
+export const EMPTY_ARRAY_READONLY = Object.freeze([]);
+export const BASE_API_DOMAIN = 'https://reqres.in';

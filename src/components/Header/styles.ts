@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { COLORS } from 'styles/theme';
+import { COLORS, spacing } from 'styles/theme';
 import { flexContainer } from 'styles/mixins';
 
 export default styled.header`
-  position: sticky;
   top: 0;
-  background: ${COLORS.GAINS_BORO};
-  height: 50px;
+  background: ${COLORS.ALTO};
+  height: ${spacing(15)};
+  border-bottom: ${spacing(0.5)} solid ${COLORS.GAINS_BORO};
   ${flexContainer({ alignItems: 'center', justifyContent: 'center' })}
 `;
