@@ -23,8 +23,8 @@ export default function useInfiniteScroll<S extends HTMLElement>({
   const prevIsLoading = usePrevious<typeof isLoading>(isLoading),
     loadedData = prevIsLoading ? prevIsLoading && !isLoading : false;
 
-  const [currentScrollRatio, ref] = useScrollRatio<S>({ hasElementDisplayChanged: loadedData }),
-    hasScrollRatioChanged: boolean = useHasChanged<typeof currentScrollRatio>(currentScrollRatio);
+  const [currentScrollRatio, ref] = useScrollRatio<S>({ hasElementDimensionChanged: loadedData }),
+    hasScrollRatioChanged = useHasChanged<typeof currentScrollRatio>(currentScrollRatio);
 
   useEffect(() => {
     shouldLoadMoreData({

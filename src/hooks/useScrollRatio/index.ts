@@ -8,17 +8,17 @@ import { ScrollRatioComputeParams } from './interfaces';
 import { computeScrollRatio } from './helpers';
 
 export default function useScrollRatio<S extends HTMLElement>({
-  hasElementDisplayChanged,
+  hasElementDimensionChanged,
 }: {
-  readonly hasElementDisplayChanged?: boolean;
+  readonly hasElementDimensionChanged?: boolean;
 }): [number, RefObject<S>] {
   const ref = useRef<S>(null),
     [currentScrollRatio, setCurrentScrollRatio] = useState<number>(1),
     computeAndSetScrollRatio = useMemo(
       () =>
-        debounce<(thresholdComputeParams: ScrollRatioComputeParams) => void>(
-          thresholdComputeParams => {
-            setCurrentScrollRatio(computeScrollRatio(thresholdComputeParams));
+        debounce<(scrollRatioComputeParams: ScrollRatioComputeParams) => void>(
+          scrollRatioComputeParams => {
+            setCurrentScrollRatio(computeScrollRatio(scrollRatioComputeParams));
           },
           50
         ),
@@ -64,8 +64,8 @@ export default function useScrollRatio<S extends HTMLElement>({
 
   //to update scrollRatio if element changed the data being displayed and inturn may have updated scroll behavior
   useEffect(() => {
-    hasElementDisplayChanged && setCurrentScrollRatio(computeScrollRatio(ref.current));
-  }, [hasElementDisplayChanged]);
+    hasElementDimensionChanged && setCurrentScrollRatio(computeScrollRatio(ref.current));
+  }, [hasElementDimensionChanged]);
 
   return [currentScrollRatio, ref];
 }

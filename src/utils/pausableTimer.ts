@@ -6,13 +6,17 @@ class PausableTimer {
   lastResumeTime: number | null;
   timer: ReturnType<typeof setTimeout> | null;
 
-  constructor(onTimeout: OnTimeout, timeout: number) {
+  constructor(
+    onTimeout: OnTimeout,
+    timeout: number,
+    { startImmediately = false }: { startImmediately?: boolean }
+  ) {
     this.callback = onTimeout;
     this.remainingTime = timeout;
     this.lastResumeTime = null;
     this.timer = null;
 
-    this.start();
+    startImmediately && this.start();
   }
 
   onTimeout = (): void => {
@@ -38,6 +42,8 @@ class PausableTimer {
       this.lastResumeTime = null;
     }
   };
+
+  finish = this.onTimeout;
 }
 
 export { PausableTimer };

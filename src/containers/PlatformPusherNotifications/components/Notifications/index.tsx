@@ -21,7 +21,13 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications }) => {
       {map<Notification, ReactNode>(
         notifications,
         (notif: Notification): ReactNode => (
-          <CSSTransition classNames="animation" timeout={500} key={notif.id} in>
+          <CSSTransition
+            classNames="animation"
+            timeout={500}
+            key={notif.id}
+            in
+            onEntered={notif.timer.start}
+          >
             <NotificationCard notification={notif} />
           </CSSTransition>
         )

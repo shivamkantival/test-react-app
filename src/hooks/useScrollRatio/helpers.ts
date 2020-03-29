@@ -3,7 +3,7 @@ import { ScrollRatioComputeParams } from './interfaces';
 
 //utils
 import isEmpty from 'lodash/isEmpty';
-import { isScrollable } from 'utils/DOMUtils';
+import { isScrollable } from 'utils';
 
 export function computeScrollRatioWithNonNullParams(params: ScrollRatioComputeParams): number {
   const { scrollHeight, scrollTop, clientHeight } = params;

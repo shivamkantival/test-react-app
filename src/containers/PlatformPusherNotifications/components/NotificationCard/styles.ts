@@ -14,6 +14,7 @@ type StyledNotificationCardProps = {
 };
 
 export default styled.span`
+  cursor: pointer;
   height: 100%;
   margin-bottom: ${spacing(2)};
   border-radius: ${spacing(1)};

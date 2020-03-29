@@ -13,6 +13,6 @@ export function createNewNotificationFromNotifDetails(
   return {
     ...pick<typeof notifDetails, 'message' | 'type'>(notifDetails, ['message', 'type']),
     id: uniqueId('notification_object_'),
-    timer: new PausableTimer(onTimeout, notifDetails.timeout || 5000),
+    timer: new PausableTimer(onTimeout, notifDetails.timeout || 5000, {}),
   };
 }

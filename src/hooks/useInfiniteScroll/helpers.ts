@@ -10,7 +10,7 @@ export function isBlankSpaceVisibleInNonScrollableView({
   return !isScrollable && !hasError;
 }
 
-function crossedThresholdInScrollableView({
+function hasCrossedThresholdInScrollableView({
   isScrollable,
   threshold,
   currentScrollRatio,
@@ -67,7 +67,7 @@ export function shouldLoadMoreData({
       isScrollable,
       hasError,
     }) ||
-      crossedThresholdInScrollableView({
+      hasCrossedThresholdInScrollableView({
         threshold,
         currentScrollRatio,
         isScrollable,

@@ -8,7 +8,7 @@ import { LoaderProps } from './interfaces';
 const ANIMATION_NAME = 'slowExpand',
   ANIMATION_PARAMS = `
     animation-name: ${ANIMATION_NAME};
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: backwards;
@@ -26,8 +26,8 @@ export default styled.div`
 
   @keyframes ${ANIMATION_NAME} {
     from {
-      width: 30%;
-      height: 30%;
+      width: 0;
+      height: 0;
       opacity: 0.3;
     }
     to {
@@ -55,7 +55,7 @@ export default styled.div`
 
   .innerExpandingConcentric {
     background: ${LOADER_COLOR};
-    animation-delay: 0.7s;
+    animation-delay: 0.3s;
     ${INITIAL_DIMENSIONS_FOR_EXPANDING_CONCENTRICS}
     ${ANIMATION_PARAMS}
     ${circular()}
