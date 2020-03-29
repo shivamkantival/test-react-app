@@ -1,6 +1,3 @@
-//typeDefs
-import { FlexContainerOptions } from './interfaces';
-
 export function centerToParent(): string {
   return `
     position: absolute;
@@ -27,7 +24,12 @@ export function flexContainer({
   alignItems = 'flex-start',
   justifyContent = 'flex-start',
   flexWrap = 'nowrap',
-}: FlexContainerOptions) {
+}: {
+  flexDirection?: 'row' | 'column';
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
+  justifyContent?: 'flex-start' | 'center' | 'space-around' | 'space-between' | 'flex-end';
+  flexWrap?: 'wrap' | 'nowrap';
+}) {
   return `
     display: flex;
     flex-direction: ${flexDirection};

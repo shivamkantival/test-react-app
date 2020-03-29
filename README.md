@@ -19,11 +19,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - Listens to updates in scrollHeight of scroll container( due to introduction of new data), and fetches more data if avaiable data does not fill updated scroll container.
     - And yes of-course, fetches more data when user scrolls to a given threshold.
 * `PlatformPusherNotifications` : Central hub for complete application to display any toast notifications to user. Managed by Context API. Supports following features-
-    - Diplays a max of 5 toasts at a time. All the rest notifications are kept in stack, their timer starts only when they appear to the user.
-    - Individual timeout can be provided when pushing a notification.
-    - Notification toast's timer pause on hover.
+    - Diplays a max of 5 toasts at a time. Overflowing notifications are kept in stack, their timer starts only when they appear to the user.
+    - Custom timeout can be provided when pushing a notification.
+    - Notification toast's timer pauses on hover.
     - Notification can be expired early by clicking on the toast.
-* `PausableTimer` : A customised wrapper over 'setTimeout' that powers each individual toast notification. Supports following functionality over and above 'setTimeout'
+* `PausableTimer` : A customised wrapper over 'setTimeout' that powers toast notification under the hood. Supports following functionality over and above 'setTimeout'
     - Option to start timer immediately or when invoked manually.
     - Pause/Resume timer as required.
     - Finish the timer early when required.
